@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import avatar from "@/assets/images/avatar-jessica.jpeg"; // todo: replace with MY avatar image
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { SocialButtons } from "@/components/ui/SocialButtons";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center bg-c-gray-900">
+            <Card className="flex w-[327px] gap-6 rounded-xl border-none bg-c-gray-800">
+                <CardHeader className="flex flex-col items-center gap-6">
+                    <img
+                        src={avatar}
+                        alt="Avatar of Jessica"
+                        className="size-[88px] rounded-full"
+                    />
+                    <div className="flex flex-col items-center gap-1">
+                        <h2 className="text-title text-foreground">Heath Babb</h2>
+                        <h3 className="text-bold text-primary">Greenville, South Carolina</h3>
+                    </div>
+                </CardHeader>
+                <CardContent className="flex flex-col items-center gap-4">
+                    <div className="flex flex-col gap-2">
+                        <h4 className="text-center text-regular text-foreground">
+                            Civil Designer <br /> Software Engineer <br /> Problem Solver
+                        </h4>
+                    </div>
+                    <div className="w-full">
+                        <SocialButtons />
+                    </div>
+                </CardContent>
+            </Card>
+        </main>
+    );
 }
 
-export default App
+export default App;
